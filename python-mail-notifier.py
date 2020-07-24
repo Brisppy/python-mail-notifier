@@ -5,11 +5,11 @@ import sys
 from email.mime.text import MIMEText
 
 # Set the number of attempts to make
-retrycount = 10
+retry_count = 10
 timeout_secs = 10
 
 context = ssl.create_default_context()
-for i in range(1, retrycount):
+for i in range(1, retry_count):
 	try:
 		print("Attempt", i)
 		server = smtplib.SMTP(sys.argv[1], sys.argv[2], timeout=timeout_secs)
